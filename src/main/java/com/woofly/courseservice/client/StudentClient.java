@@ -9,7 +9,7 @@ import java.util.List;
 
 // name: İstənilən ad
 // url: Sorğu atılacaq servisin ünvanı (Student Service)
-@FeignClient(name = "student-service", url = "http://localhost:8081/api")
+@FeignClient(name = "student-service", url = "${application.config.student-url}")
 public interface StudentClient {
 
     @GetMapping("/students/course/{courseId}")
