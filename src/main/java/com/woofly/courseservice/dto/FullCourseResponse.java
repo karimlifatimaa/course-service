@@ -5,10 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class FullCourseResponse {
     private Course course;
-    private StudentDTO student;
+    private List<StudentDTO> students;
 }

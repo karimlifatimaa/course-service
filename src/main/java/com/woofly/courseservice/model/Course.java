@@ -20,7 +20,4 @@ public class Course {
 
     private Double price;
 
-    // Biz yalnız tələbənin ID-sini bilirik.
-    // Tələbənin kim olduğu (Adı, Soyadı) Student Service-dədir.
-    private Long studentId;
 }
