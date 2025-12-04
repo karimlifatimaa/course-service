@@ -20,6 +20,28 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
 
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: kerimlifatime417@gmail.com
+    password: vwunlasnvnaganyc
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 application:
   config:
     student-url: http://localhost:8081/api
+
+logging:
+  file:
+    name: logs/course-service.log
+  level:
+    com:
+      woofly:
+        courseservice: INFO
+    org:
+      springframework:
+        web: DEBUG

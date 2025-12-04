@@ -19,5 +19,4 @@ public class Course {
     private String title;
 
     private Double price;
-
 }

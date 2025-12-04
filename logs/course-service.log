@@ -1,0 +1,118 @@
+2025-12-04T00:06:56.691+04:00  INFO 25652 --- [course-service] [main] c.w.c.CourseServiceApplication           : Starting CourseServiceApplication using Java 17.0.14 with PID 25652 (C:\Users\User1\Desktop\Neurus\course-service\build\classes\java\main started by Fatima in C:\Users\User1\Desktop\Neurus\course-service)
+2025-12-04T00:06:56.693+04:00  INFO 25652 --- [course-service] [main] c.w.c.CourseServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-12-04T00:06:57.464+04:00  INFO 25652 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-04T00:06:57.508+04:00  INFO 25652 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 1 JPA repository interface.
+2025-12-04T00:06:57.615+04:00  INFO 25652 --- [course-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10348b18-09e7-3f17-b0d3-fbfcb9903bc2
+2025-12-04T00:06:57.909+04:00  INFO 25652 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-12-04T00:06:57.921+04:00  INFO 25652 --- [course-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-04T00:06:57.922+04:00  INFO 25652 --- [course-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-04T00:06:57.981+04:00  INFO 25652 --- [course-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-04T00:06:57.982+04:00  INFO 25652 --- [course-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1248 ms
+2025-12-04T00:06:58.130+04:00  INFO 25652 --- [course-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-04T00:06:58.180+04:00  INFO 25652 --- [course-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
+2025-12-04T00:06:58.209+04:00  INFO 25652 --- [course-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-04T00:06:58.472+04:00  INFO 25652 --- [course-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-04T00:06:58.497+04:00  INFO 25652 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-04T00:06:58.674+04:00  INFO 25652 --- [course-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70f98f7a
+2025-12-04T00:06:58.677+04:00  INFO 25652 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-04T00:06:58.709+04:00  WARN 25652 --- [course-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-04T00:06:58.730+04:00  INFO 25652 --- [course-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-04T00:06:59.477+04:00  INFO 25652 --- [course-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-04T00:06:59.558+04:00  INFO 25652 --- [course-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T00:06:59.859+04:00  WARN 25652 --- [course-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-04T00:07:00.005+04:00  INFO 25652 --- [course-service] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-04T00:07:00.079+04:00 DEBUG 25652 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-12-04T00:07:00.149+04:00 DEBUG 25652 --- [course-service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-12-04T00:07:00.171+04:00 DEBUG 25652 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04T00:07:00.209+04:00 DEBUG 25652 --- [course-service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04T00:07:00.485+04:00  INFO 25652 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-12-04T00:07:00.562+04:00  INFO 25652 --- [course-service] [main] c.w.c.CourseServiceApplication           : Started CourseServiceApplication in 4.472 seconds (process running for 5.348)
+2025-12-04T00:07:15.551+04:00  INFO 25652 --- [course-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-04T00:07:15.552+04:00  INFO 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-04T00:07:15.554+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-04T00:07:15.555+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-04T00:07:15.555+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-04T00:07:15.558+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3dfaa1e4
+2025-12-04T00:07:15.559+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@237b54bc
+2025-12-04T00:07:15.560+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-04T00:07:15.561+04:00  INFO 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2025-12-04T00:07:15.585+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/courses", parameters={}
+2025-12-04T00:07:15.614+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.CourseController#createCourse(Course)
+2025-12-04T00:07:15.942+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Course(id=null, title=Java Backend & Microservices, price=300.0)]
+2025-12-04T00:07:15.962+04:00  INFO 25652 --- [course-service] [http-nio-8082-exec-1] c.w.c.controller.CourseController        : Received request to create course: Course(id=null, title=Java Backend & Microservices, price=300.0)
+2025-12-04T00:07:16.287+04:00  INFO 25652 --- [course-service] [http-nio-8082-exec-1] c.w.courseservice.service.CourseService  : New course created with ID: 5
+2025-12-04T00:07:18.809+04:00  INFO 25652 --- [course-service] [http-nio-8082-exec-1] c.w.courseservice.service.EmailService   : Email sent successfully to recipient-email@example.com with subject: New Course Created and body: A new course has been created: Java Backend & Microservices
+2025-12-04T00:07:18.876+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-04T00:07:18.880+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [Course(id=5, title=Java Backend & Microservices, price=300.0)]
+2025-12-04T00:07:18.911+04:00 DEBUG 25652 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-04T00:09:48.411+04:00  INFO 25652 --- [course-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-04T00:09:48.548+04:00  INFO 25652 --- [course-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-04T00:09:48.553+04:00  INFO 25652 --- [course-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T00:09:48.555+04:00  INFO 25652 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-04T00:09:48.561+04:00  INFO 25652 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-04T00:09:55.056+04:00  INFO 25328 --- [course-service] [main] c.w.c.CourseServiceApplication           : Starting CourseServiceApplication using Java 17.0.14 with PID 25328 (C:\Users\User1\Desktop\Neurus\course-service\build\classes\java\main started by Fatima in C:\Users\User1\Desktop\Neurus\course-service)
+2025-12-04T00:09:55.059+04:00  INFO 25328 --- [course-service] [main] c.w.c.CourseServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-12-04T00:09:55.887+04:00  INFO 25328 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-04T00:09:55.937+04:00  INFO 25328 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2025-12-04T00:09:56.048+04:00  INFO 25328 --- [course-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=10348b18-09e7-3f17-b0d3-fbfcb9903bc2
+2025-12-04T00:09:56.345+04:00  INFO 25328 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-12-04T00:09:56.355+04:00  INFO 25328 --- [course-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-04T00:09:56.355+04:00  INFO 25328 --- [course-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-04T00:09:56.408+04:00  INFO 25328 --- [course-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-04T00:09:56.408+04:00  INFO 25328 --- [course-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1307 ms
+2025-12-04T00:09:56.544+04:00  INFO 25328 --- [course-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-04T00:09:56.598+04:00  INFO 25328 --- [course-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
+2025-12-04T00:09:56.627+04:00  INFO 25328 --- [course-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-04T00:09:56.905+04:00  INFO 25328 --- [course-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-04T00:09:56.937+04:00  INFO 25328 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-04T00:09:57.108+04:00  INFO 25328 --- [course-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@30a01dd8
+2025-12-04T00:09:57.111+04:00  INFO 25328 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-04T00:09:57.147+04:00  WARN 25328 --- [course-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-04T00:09:57.172+04:00  INFO 25328 --- [course-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.4
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-04T00:09:57.910+04:00  INFO 25328 --- [course-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-04T00:09:57.993+04:00  INFO 25328 --- [course-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T00:09:58.313+04:00  WARN 25328 --- [course-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-04T00:09:58.448+04:00  INFO 25328 --- [course-service] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-04T00:09:58.506+04:00 DEBUG 25328 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 9 mappings in 'requestMappingHandlerMapping'
+2025-12-04T00:09:58.583+04:00 DEBUG 25328 --- [course-service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-12-04T00:09:58.607+04:00 DEBUG 25328 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-04T00:09:58.649+04:00 DEBUG 25328 --- [course-service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-04T00:09:58.906+04:00  INFO 25328 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-12-04T00:09:58.986+04:00  INFO 25328 --- [course-service] [main] c.w.c.CourseServiceApplication           : Started CourseServiceApplication in 4.503 seconds (process running for 5.348)
+2025-12-04T00:10:28.176+04:00  INFO 25328 --- [course-service] [http-nio-8082-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-04T00:10:28.177+04:00  INFO 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-04T00:10:28.178+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-04T00:10:28.180+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-04T00:10:28.181+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-04T00:10:28.186+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@12e13abd
+2025-12-04T00:10:28.187+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@77a1df4d
+2025-12-04T00:10:28.189+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-04T00:10:28.189+04:00  INFO 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2025-12-04T00:10:28.213+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/courses", parameters={}
+2025-12-04T00:10:28.247+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.CourseController#createCourse(Course)
+2025-12-04T00:10:28.613+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Course(id=null, title=Java Backend & Microservices, price=300.0)]
+2025-12-04T00:10:28.629+04:00  INFO 25328 --- [course-service] [http-nio-8082-exec-4] c.w.c.controller.CourseController        : Received request to create course: Course(id=null, title=Java Backend & Microservices, price=300.0)
+2025-12-04T00:10:28.852+04:00  INFO 25328 --- [course-service] [http-nio-8082-exec-4] c.w.courseservice.service.CourseService  : New course created with ID: 6
+2025-12-04T00:10:31.844+04:00  INFO 25328 --- [course-service] [http-nio-8082-exec-4] c.w.courseservice.service.EmailService   : Email sent successfully to adilkerimli001@gmail.com with subject: New Course Created and body: A new course has been created: Java Backend & Microservices
+2025-12-04T00:10:31.914+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-04T00:10:31.918+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [Course(id=6, title=Java Backend & Microservices, price=300.0)]
+2025-12-04T00:10:31.952+04:00 DEBUG 25328 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-04T00:10:41.187+04:00  INFO 25328 --- [course-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-04T00:10:41.320+04:00  INFO 25328 --- [course-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-04T00:10:41.324+04:00  INFO 25328 --- [course-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-04T00:10:41.327+04:00  INFO 25328 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-04T00:10:41.329+04:00  INFO 25328 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
