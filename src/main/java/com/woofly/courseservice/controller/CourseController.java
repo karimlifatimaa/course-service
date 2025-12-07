@@ -6,6 +6,7 @@ import com.woofly.courseservice.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,18 +18,21 @@ public class CourseController {
     private final CourseService courseService;
 
     @PostMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public Course createCourse(@RequestBody Course course) {
         log.info("Received request to create course: {}", course);
         return courseService.createCourse(course);
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     public FullCourseResponse getCourseDetails(@PathVariable Long id) {
         log.info("Received request to get course details for ID: {}", id);
         return courseService.getCourseDetails(id);
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public void deleteCourse(@PathVariable Long id) {
         log.info("Received request to delete course with ID: {}", id);
         courseService.deleteCourse(id);
