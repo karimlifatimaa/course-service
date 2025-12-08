@@ -33,41 +33,38 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
-    // --- DÜZƏLİŞLƏR BURADAN BAŞLAYIR ---
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Rolu Spring Security-nin başa düşəcəyi formata çeviririk
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override
     public String getPassword() {
-        return password; // DİQQƏT: Boş "" yox, real password sahəsini qaytarın
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return email; // DİQQƏT: Login üçün email istifadə edirsinizsə, bunu qaytarın
+        return email;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return true; // Hesabın vaxtı keçməyib
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true; // Hesab kilidlənməyib
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true; // Şifrənin vaxtı bitməyib
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return true; // Hesab aktivdir
+        return true;
     }
 }
