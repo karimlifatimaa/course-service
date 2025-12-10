@@ -44,7 +44,7 @@ public class AuthController {
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
-                .role(Role.USER)
+                .role(Role.USER )
                 .build();
         userRepository.save(user);
 

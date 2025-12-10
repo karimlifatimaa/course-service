@@ -6,8 +6,11 @@ import com.woofly.courseservice.service.CourseService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/courses")
@@ -24,6 +27,13 @@ public class CourseController {
         return courseService.createCourse(course);
     }
 
+    @GetMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public List<Course> getAllCourses() {
+        log.info("Received request to get all courses");
+        return courseService.getAllCourses();
+    }
+
     @GetMapping("/{id}")
     @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
     public FullCourseResponse getCourseDetails(@PathVariable Long id) {
@@ -36,5 +46,13 @@ public class CourseController {
     public void deleteCourse(@PathVariable Long id) {
         log.info("Received request to delete course with ID: {}", id);
         courseService.deleteCourse(id);
+    }
+
+    @DeleteMapping("/cache")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public ResponseEntity<Void> clearCache() {
+        log.info("Received request to clear all course caches");
+        courseService.clearAllCaches();
+        return ResponseEntity.noContent().build();
     }
 }
