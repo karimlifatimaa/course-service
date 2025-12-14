@@ -24,25 +24,11 @@ public class CourseService {
     // For caching
     private static final String COURSE_CACHE_NAME = "courseData";
 
+    @CacheEvict(value = COURSE_CACHE_NAME, allEntries = true)
     public Course createCourse(Course course) {
         Course savedCourse = courseRepository.save(course);
         log.info("New course created with ID: {}", savedCourse.getId());
-        String createdHtmlContent = """
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <title>Course Created Notification</title>
-            </head>
-            <body>
-                <p>Dear recipient,</p>
-                <p>A new course titled "<b>%s</b>" has been successfully created.</p>
-                <p>The course ID is: %d.</p>
-                <p>Thank you.</p>
-            </body>
-            </html>
-            """.formatted(savedCourse.getTitle(), savedCourse.getId());
-        emailService.sendHtmlEmail("adilkerimli001@gmail.com", "New Course Created Notification", createdHtmlContent);
+        emailService.sendEmail("adilkerimli001@gmail.com", "New Course Created Notification", "New Course Created");
 
         return savedCourse;
     }
@@ -53,6 +39,18 @@ public class CourseService {
         return courseRepository.findAll();
     }
 
+    /**
+     * Kurs məlumatlarını keşləyir.
+     * Keşdə varsa: Vb-yə və StudentClient-ə sorğu getmir, Redis-dən gəlir.
+     * Keşdə yoxdursa: Metod icra olunur, nəticə (FullCourseResponse) Redis-də saxlanılır.
+     */
+    @Cacheable(value = COURSE_CACHE_NAME, key = "'course:' + #courseId")
+    public Course getCourseById(Long courseId) {
+        log.info("Fetching course with id: {}", courseId);
+        return courseRepository.findById(courseId)
+                .orElseThrow(() -> new RuntimeException("Course not found!"));
+    }
+    
     /**
      * Kurs məlumatlarını keşləyir.
      * Keşdə varsa: Vb-yə və StudentClient-ə sorğu getmir, Redis-dən gəlir.
@@ -70,31 +68,29 @@ public class CourseService {
         return new FullCourseResponse(course, students);
     }
 
-    /**
-     * Kurs silinəndə, bu kursa aid keş girişini Redis-dən silir.
-     * Bu, gələcəkdə bu ID ilə keşə müraciət edilərsə, Keş Hit olmamasının qarşısını alır.
-     */
-    @CacheEvict(value = COURSE_CACHE_NAME, key = "#courseId")
+
+    public Course updateCourse(Long courseId, Course courseDetails) {
+        Course existingCourse = courseRepository.findById(courseId)
+                .orElseThrow(() -> new RuntimeException("Kurs tapılmadı!"));
+
+        existingCourse.setTitle(courseDetails.getTitle());
+        existingCourse.setPrice(courseDetails.getPrice());
+
+        Course updatedCourse = courseRepository.save(existingCourse);
+        log.info("Course with ID: {} has been updated.", courseId);
+
+        emailService.sendHtmlEmail("adilkerimli001@gmail.com", "Course Updated Notification", "Course Updated");
+
+        return updatedCourse;
+    }
+
+    @CacheEvict(value = COURSE_CACHE_NAME, key="#courseId")
     public void deleteCourse(Long courseId) {
         Course course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new RuntimeException("Kurs tapılmadı!"));
         courseRepository.deleteById(courseId);
         log.info("Course with ID: {} has been deleted.", courseId);
-        String deletedHtmlContent = """
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <title>Course Deleted Notification</title>
-            </head>
-            <body>
-                <p>Dear recipient,</p>
-                <p>The course titled "<b>%s</b>" (ID: %d) has been successfully deleted.</p>
-                <p>Thank you.</p>
-            </body>
-            </html>
-            """.formatted(course.getTitle(), course.getId());
-        emailService.sendHtmlEmail("adilkerimli001@gmail.com", "Course Deleted Notification", deletedHtmlContent);
+        emailService.sendHtmlEmail("adilkerimli001@gmail.com", "Course Deleted Notification", "Course Deleted : "+ course);
     }
 
     @CacheEvict(value = COURSE_CACHE_NAME, allEntries = true)

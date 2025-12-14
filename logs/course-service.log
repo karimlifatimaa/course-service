@@ -1,50 +1,346 @@
-2025-12-11T01:23:15.099+04:00  INFO 12784 --- [course-service] [main] c.w.c.CourseServiceApplication           : Starting CourseServiceApplication using Java 17.0.14 with PID 12784 (C:\Users\User1\Desktop\Neurus\course-service\build\classes\java\main started by Fatima in C:\Users\User1\Desktop\Neurus\course-service)
-2025-12-11T01:23:15.101+04:00  INFO 12784 --- [course-service] [main] c.w.c.CourseServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-12-11T01:23:16.378+04:00  INFO 12784 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-11T01:23:16.394+04:00  INFO 12784 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-12-11T01:23:16.912+04:00  INFO 12784 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 496 ms. Found 3 JPA repository interfaces.
-2025-12-11T01:23:16.940+04:00  INFO 12784 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-12-11T01:23:16.942+04:00  INFO 12784 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-12-11T01:23:16.964+04:00  INFO 12784 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.CourseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-12-11T01:23:16.965+04:00  INFO 12784 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-12-11T01:23:16.966+04:00  INFO 12784 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
-2025-12-11T01:23:16.966+04:00  INFO 12784 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
-2025-12-11T01:23:17.226+04:00  INFO 12784 --- [course-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=1edd2c6e-affe-380a-abcb-62b904ef6b97
-2025-12-11T01:23:17.648+04:00  INFO 12784 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
-2025-12-11T01:23:17.673+04:00  INFO 12784 --- [course-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-12-11T01:23:17.674+04:00  INFO 12784 --- [course-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
-2025-12-11T01:23:17.764+04:00  INFO 12784 --- [course-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-12-11T01:23:17.764+04:00  INFO 12784 --- [course-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2616 ms
-2025-12-11T01:23:17.965+04:00  INFO 12784 --- [course-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-12-11T01:23:18.026+04:00  INFO 12784 --- [course-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
-2025-12-11T01:23:18.057+04:00  INFO 12784 --- [course-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-12-11T01:23:18.351+04:00  INFO 12784 --- [course-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-12-11T01:23:18.414+04:00  INFO 12784 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-12-11T01:23:18.658+04:00  INFO 12784 --- [course-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@70cd122
-2025-12-11T01:23:18.660+04:00  INFO 12784 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-12-11T01:23:18.695+04:00  WARN 12784 --- [course-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-12-11T01:23:18.715+04:00  INFO 12784 --- [course-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-12-14T00:48:20.154+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m17s622ms).
+2025-12-14T00:59:59.309+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m39s155ms).
+2025-12-14T02:00:41.058+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h41s749ms).
+2025-12-14T02:18:40.815+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m59s757ms).
+2025-12-14T03:13:31.798+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54m50s983ms).
+2025-12-14T04:03:26.184+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m24s283ms).
+2025-12-14T04:20:17.740+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m51s557ms).
+2025-12-14T05:10:41.477+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m23s737ms).
+2025-12-14T05:28:06.845+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=17m25s368ms).
+2025-12-14T05:44:08.568+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m31s689ms).
+2025-12-14T06:32:30.011+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48m21s443ms).
+2025-12-14T07:36:43.626+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h3m43s582ms).
+2025-12-14T08:01:16.077+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=24m32s451ms).
+2025-12-14T08:50:22.844+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m6s767ms).
+2025-12-14T09:02:10.664+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11m47s820ms).
+2025-12-14T09:52:54.000+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50m43s336ms).
+2025-12-14T10:03:12.889+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m18s840ms).
+2025-12-14T10:36:21.245+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m8s356ms).
+2025-12-14T11:04:28.367+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m7s122ms).
+2025-12-14T11:51:33.110+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m4s743ms).
+2025-12-14T12:05:16.087+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=13m42s977ms).
+2025-12-14T12:08:11.544+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m55s438ms).
+2025-12-14T12:55:14.554+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=47m3s9ms).
+2025-12-14T13:22:51.555+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m37s2ms).
+2025-12-14T14:05:00.634+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=41m39s187ms).
+2025-12-14T14:24:48.607+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19m47s973ms).
+2025-12-14T14:55:20.637+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=30m32s30ms).
+2025-12-14T15:40:28.467+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=45m7s830ms).
+2025-12-14T16:00:50.834+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m22s334ms).
+2025-12-14T16:24:40.220+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=23m49s387ms).
+2025-12-14T16:57:57.601+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m17s381ms).
+2025-12-14T17:10:31.099+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10m33s491ms).
+2025-12-14T17:44:29.797+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=33m58s698ms).
+2025-12-14T18:11:31.106+04:00  WARN 35306 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=27m1s309ms).
+2025-12-14T18:25:54.379+04:00  INFO 35306 --- [course-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-14T18:25:54.381+04:00  INFO 35306 --- [course-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-14T18:25:54.389+04:00  INFO 35306 --- [course-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-14T18:25:54.390+04:00  INFO 35306 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-14T18:25:54.391+04:00  INFO 35306 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-14T22:51:23.532+04:00  INFO 38672 --- [course-service] [main] c.w.c.CourseServiceApplication           : Starting CourseServiceApplication using Java 17.0.17 with PID 38672 (/Users/fatimakarimli/course-service/build/classes/java/main started by fatimakarimli in /Users/fatimakarimli/course-service)
+2025-12-14T22:51:23.533+04:00  INFO 38672 --- [course-service] [main] c.w.c.CourseServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-12-14T22:51:23.872+04:00  INFO 38672 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-14T22:51:23.873+04:00  INFO 38672 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-14T22:51:23.935+04:00  INFO 38672 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2025-12-14T22:51:23.942+04:00  INFO 38672 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-14T22:51:23.943+04:00  INFO 38672 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-14T22:51:23.949+04:00  INFO 38672 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.CourseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-14T22:51:23.950+04:00  INFO 38672 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-14T22:51:23.950+04:00  INFO 38672 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-14T22:51:23.950+04:00  INFO 38672 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-12-14T22:51:24.021+04:00  INFO 38672 --- [course-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=396fe849-33bf-3b84-b388-9213afc90da4
+2025-12-14T22:51:24.186+04:00  INFO 38672 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-12-14T22:51:24.192+04:00  INFO 38672 --- [course-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-14T22:51:24.192+04:00  INFO 38672 --- [course-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-14T22:51:24.213+04:00  INFO 38672 --- [course-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-14T22:51:24.214+04:00  INFO 38672 --- [course-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 666 ms
+2025-12-14T22:51:24.269+04:00  INFO 38672 --- [course-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-14T22:51:24.293+04:00  INFO 38672 --- [course-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
+2025-12-14T22:51:24.306+04:00  INFO 38672 --- [course-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-14T22:51:24.421+04:00  INFO 38672 --- [course-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-14T22:51:24.435+04:00  INFO 38672 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-14T22:51:24.474+04:00  INFO 38672 --- [course-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@43cf5bff
+2025-12-14T22:51:24.474+04:00  INFO 38672 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-14T22:51:24.491+04:00  WARN 38672 --- [course-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-14T22:51:24.497+04:00  INFO 38672 --- [course-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
-	Database version: 17.4
+	Database version: 14.20
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-12-11T01:23:20.139+04:00  INFO 12784 --- [course-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-12-11T01:23:20.274+04:00  INFO 12784 --- [course-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-12-11T01:23:20.753+04:00  INFO 12784 --- [course-service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-12-11T01:23:20.754+04:00  WARN 12784 --- [course-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
-2025-12-11T01:23:20.992+04:00  WARN 12784 --- [course-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-12-11T01:23:21.605+04:00 DEBUG 12784 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
-2025-12-11T01:23:21.719+04:00 DEBUG 12784 --- [course-service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
-2025-12-11T01:23:21.925+04:00  INFO 12784 --- [course-service] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-12-11T01:23:21.962+04:00 DEBUG 12784 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2025-12-11T01:23:22.031+04:00 DEBUG 12784 --- [course-service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
-2025-12-11T01:23:22.421+04:00  INFO 12784 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
-2025-12-11T01:23:22.516+04:00  INFO 12784 --- [course-service] [main] c.w.c.CourseServiceApplication           : Started CourseServiceApplication in 8.237 seconds (process running for 8.78)
-2025-12-11T01:24:02.466+04:00  INFO 12784 --- [course-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-11T01:24:02.557+04:00  INFO 12784 --- [course-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-12-11T01:24:02.568+04:00  INFO 12784 --- [course-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-12-11T01:24:02.570+04:00  INFO 12784 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-12-11T01:24:02.576+04:00  INFO 12784 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-14T22:51:24.832+04:00  INFO 38672 --- [course-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-14T22:51:24.879+04:00  INFO 38672 --- [course-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-14T22:51:25.035+04:00  INFO 38672 --- [course-service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-14T22:51:25.036+04:00  WARN 38672 --- [course-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-14T22:51:25.142+04:00  WARN 38672 --- [course-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-14T22:51:25.323+04:00 DEBUG 38672 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 15 mappings in 'requestMappingHandlerMapping'
+2025-12-14T22:51:25.379+04:00 DEBUG 38672 --- [course-service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-12-14T22:51:25.462+04:00 DEBUG 38672 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-14T22:51:25.483+04:00 DEBUG 38672 --- [course-service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-14T22:51:25.647+04:00  INFO 38672 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-12-14T22:51:25.655+04:00  INFO 38672 --- [course-service] [main] c.w.c.CourseServiceApplication           : Started CourseServiceApplication in 2.294 seconds (process running for 2.584)
+2025-12-14T22:52:00.993+04:00  INFO 38672 --- [course-service] [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-14T22:52:00.994+04:00  INFO 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-14T22:52:00.994+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-14T22:52:00.994+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-14T22:52:00.994+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-14T22:52:00.996+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@63f1d374
+2025-12-14T22:52:00.996+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6311898c
+2025-12-14T22:52:00.996+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-14T22:52:00.996+04:00  INFO 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-12-14T22:52:01.007+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.html", parameters={}
+2025-12-14T22:52:01.008+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-12-14T22:52:01.020+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:01.024+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui.css", parameters={}
+2025-12-14T22:52:01.024+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/index.css", parameters={}
+2025-12-14T22:52:01.024+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-bundle.js", parameters={}
+2025-12-14T22:52:01.024+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-12-14T22:52:01.024+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-12-14T22:52:01.024+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-12-14T22:52:01.025+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:01.026+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:01.028+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-initializer.js", parameters={}
+2025-12-14T22:52:01.028+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/swagger-ui/swagger-ui-standalone-preset.js", parameters={}
+2025-12-14T22:52:01.028+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-2] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-12-14T22:52:01.028+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-5] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]]
+2025-12-14T22:52:01.031+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:01.036+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:01.042+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:01.089+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs/swagger-config", parameters={}
+2025-12-14T22:52:01.089+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.ui.SwaggerConfigResource#openapiJson(HttpServletRequest)
+2025-12-14T22:52:01.096+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json]
+2025-12-14T22:52:01.103+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Writing [{configUrl=/v3/api-docs/swagger-config, oauth2RedirectUrl=http://localhost:8082/swagger-ui/oauth2-re (truncated)...]
+2025-12-14T22:52:01.106+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:01.125+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/v3/api-docs", parameters={}
+2025-12-14T22:52:01.131+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springdoc.webmvc.api.OpenApiWebMvcResource#openapiJson(HttpServletRequest, String, Locale)
+2025-12-14T22:52:01.328+04:00  INFO 38672 --- [course-service] [http-nio-8082-exec-7] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 190 ms
+2025-12-14T22:52:01.334+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [application/json, */*] and supported [application/json]
+2025-12-14T22:52:01.335+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing [{123, 34, 111, 112, 101, 110, 97, 112, 105, 34, 58, 34, 51, 46, 49, 46, 48, 34, 44, 34, 105, 110, 10 (truncated)...]
+2025-12-14T22:52:01.336+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:52:16.987+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2025-12-14T22:52:16.988+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#login(LoginRequest)
+2025-12-14T22:52:17.001+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(email=admin, password=admin123)]
+2025-12-14T22:52:17.034+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.woofly.courseservice.exception.GlobalExceptionHandler#handleValidationExceptions(MethodArgumentNotValidException, HttpServletRequest)
+2025-12-14T22:52:17.036+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T22:52:17.037+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(timestamp=2025-12-14T22:52:17.034392, status=400, error=Bad Request, message=Validatio (truncated)...]
+2025-12-14T22:52:17.038+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<com.woofly.courseservice.dto.auth.AuthResponse> com.woofly.courseservice.controller.AuthController.login(com.woofly.courseservice.dto.auth.LoginRequest): [Field error in object 'loginRequest' on field 'email': rejected value [admin]; codes [Email.loginRequest.email,Email.email,Email.java.lang.String,Email]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [loginRequest.email,email]; arguments []; default message [email],[Ljakarta.validation.constraints.Pattern$Flag;@5784dbd1,.*]; default message [Email should be valid]] ]
+2025-12-14T22:52:17.038+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-12-14T22:56:40.372+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/register", parameters={}
+2025-12-14T22:56:40.373+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#register(RegisterRequest)
+2025-12-14T22:56:40.376+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterRequest(name=null, email=admin@gmail.com, password=admin123)]
+2025-12-14T22:56:40.389+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.woofly.courseservice.exception.GlobalExceptionHandler#handleValidationExceptions(MethodArgumentNotValidException, HttpServletRequest)
+2025-12-14T22:56:40.389+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T22:56:40.389+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(timestamp=2025-12-14T22:56:40.389443, status=400, error=Bad Request, message=Validatio (truncated)...]
+2025-12-14T22:56:40.390+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<?> com.woofly.courseservice.controller.AuthController.register(com.woofly.courseservice.dto.auth.RegisterRequest): [Field error in object 'registerRequest' on field 'name': rejected value [null]; codes [NotBlank.registerRequest.name,NotBlank.name,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [registerRequest.name,name]; arguments []; default message [name]]; default message [Name is required]] ]
+2025-12-14T22:56:40.390+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 400 BAD_REQUEST
+2025-12-14T22:57:20.151+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/register", parameters={}
+2025-12-14T22:57:20.152+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#register(RegisterRequest)
+2025-12-14T22:57:20.153+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterRequest(name=admin, email=admin@gmail.com, password=admin123)]
+2025-12-14T22:57:20.345+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T22:57:20.345+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [AuthResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjU3Mzg2ND (truncated)...]
+2025-12-14T22:57:20.346+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T22:58:33.046+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2025-12-14T22:58:33.046+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#login(LoginRequest)
+2025-12-14T22:58:33.048+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(email=admin@gmail.com, password=admin123)]
+2025-12-14T22:58:33.224+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T22:58:33.224+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [AuthResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjU3Mzg3MT (truncated)...]
+2025-12-14T22:58:33.224+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T23:02:22.726+04:00 ERROR 38672 --- [course-service] [http-nio-8082-exec-9] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+
+io.jsonwebtoken.MalformedJwtException: JWT strings must contain exactly 2 period characters. Found: 0
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:275) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:529) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:589) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at io.jsonwebtoken.impl.ImmutableJwtParser.parseClaimsJws(ImmutableJwtParser.java:173) ~[jjwt-impl-0.11.5.jar:0.11.5]
+	at com.woofly.courseservice.service.JwtService.extractAllClaims(JwtService.java:72) ~[main/:na]
+	at com.woofly.courseservice.service.JwtService.extractClaim(JwtService.java:33) ~[main/:na]
+	at com.woofly.courseservice.service.JwtService.extractUsername(JwtService.java:29) ~[main/:na]
+	at com.woofly.courseservice.filter.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:45) ~[main/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.5.7.jar:6.5.7]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.ServletRequestPathFilter.doFilter(ServletRequestPathFilter.java:52) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebSecurityConfiguration.java:319) ~[spring-security-config-6.5.7.jar:6.5.7]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$4(HandlerMappingIntrospector.java:267) ~[spring-webmvc-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:240) ~[spring-security-config-6.5.7.jar:6.5.7]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.14.jar:6.2.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.49.jar:10.1.49]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2025-12-14T23:02:27.481+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2025-12-14T23:02:27.482+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#login(LoginRequest)
+2025-12-14T23:02:27.483+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(email=admin@gmail.com, password=admin123)]
+2025-12-14T23:02:27.592+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T23:02:27.592+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [AuthResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjU3Mzg5ND (truncated)...]
+2025-12-14T23:02:27.593+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T23:02:40.402+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/courses", parameters={}
+2025-12-14T23:02:40.403+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.CourseController#createCourse(Course)
+2025-12-14T23:02:40.404+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Course(id=null, title=Introduction to Java Programming, price=99.99)]
+2025-12-14T23:02:40.409+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.woofly.courseservice.exception.GlobalExceptionHandler#handleAccessDeniedException(AccessDeniedException, HttpServletRequest)
+2025-12-14T23:02:40.409+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T23:02:40.409+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [ErrorResponse(timestamp=2025-12-14T23:02:40.409477, status=403, error=Forbidden, message=Access Deni (truncated)...]
+2025-12-14T23:02:40.410+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.security.authorization.AuthorizationDeniedException: Access Denied]
+2025-12-14T23:02:40.410+04:00 DEBUG 38672 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 403 FORBIDDEN
+2025-12-14T23:03:18.750+04:00  INFO 38672 --- [course-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-14T23:03:18.753+04:00  INFO 38672 --- [course-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-14T23:03:18.767+04:00  INFO 38672 --- [course-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-14T23:03:18.768+04:00  INFO 38672 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-14T23:03:18.769+04:00  INFO 38672 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-12-14T23:03:20.559+04:00  INFO 39041 --- [course-service] [main] c.w.c.CourseServiceApplication           : Starting CourseServiceApplication using Java 17.0.17 with PID 39041 (/Users/fatimakarimli/course-service/build/classes/java/main started by fatimakarimli in /Users/fatimakarimli/course-service)
+2025-12-14T23:03:20.560+04:00  INFO 39041 --- [course-service] [main] c.w.c.CourseServiceApplication           : No active profile set, falling back to 1 default profile: "default"
+2025-12-14T23:03:21.175+04:00  INFO 39041 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-14T23:03:21.176+04:00  INFO 39041 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-14T23:03:21.251+04:00  INFO 39041 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67 ms. Found 3 JPA repository interfaces.
+2025-12-14T23:03:21.259+04:00  INFO 39041 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-14T23:03:21.260+04:00  INFO 39041 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-14T23:03:21.267+04:00  INFO 39041 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.CourseRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-14T23:03:21.267+04:00  INFO 39041 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.RefreshTokenRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-14T23:03:21.267+04:00  INFO 39041 --- [course-service] [main] .RepositoryConfigurationExtensionSupport : Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.woofly.courseservice.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+2025-12-14T23:03:21.267+04:00  INFO 39041 --- [course-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 Redis repository interfaces.
+2025-12-14T23:03:21.348+04:00  INFO 39041 --- [course-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=396fe849-33bf-3b84-b388-9213afc90da4
+2025-12-14T23:03:21.534+04:00  INFO 39041 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2025-12-14T23:03:21.539+04:00  INFO 39041 --- [course-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-14T23:03:21.539+04:00  INFO 39041 --- [course-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-14T23:03:21.560+04:00  INFO 39041 --- [course-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-14T23:03:21.561+04:00  INFO 39041 --- [course-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 984 ms
+2025-12-14T23:03:21.610+04:00  INFO 39041 --- [course-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-14T23:03:21.627+04:00  INFO 39041 --- [course-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
+2025-12-14T23:03:21.637+04:00  INFO 39041 --- [course-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-14T23:03:21.740+04:00  INFO 39041 --- [course-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-14T23:03:21.751+04:00  INFO 39041 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-14T23:03:21.791+04:00  INFO 39041 --- [course-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@65b5b5ed
+2025-12-14T23:03:21.792+04:00  INFO 39041 --- [course-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-14T23:03:21.813+04:00  WARN 39041 --- [course-service] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-14T23:03:21.820+04:00  INFO 39041 --- [course-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 14.20
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-14T23:03:22.136+04:00  INFO 39041 --- [course-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-14T23:03:22.174+04:00  WARN 39041 --- [course-service] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-14T23:03:22.174+04:00  WARN 39041 --- [course-service] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "uk4vj92ux8a2eehds1mdvmks473" of relation "app_users" does not exist, skipping
+2025-12-14T23:03:22.176+04:00  WARN 39041 --- [course-service] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-14T23:03:22.176+04:00  WARN 39041 --- [course-service] [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : constraint "ukf95ixxe7pa48ryn1awmh2evt7" of relation "refresh_token" does not exist, skipping
+2025-12-14T23:03:22.180+04:00  INFO 39041 --- [course-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-14T23:03:22.332+04:00  INFO 39041 --- [course-service] [main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-14T23:03:22.332+04:00  WARN 39041 --- [course-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-12-14T23:03:22.450+04:00  WARN 39041 --- [course-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-14T23:03:22.622+04:00 DEBUG 39041 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 15 mappings in 'requestMappingHandlerMapping'
+2025-12-14T23:03:22.683+04:00 DEBUG 39041 --- [course-service] [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2025-12-14T23:03:22.771+04:00 DEBUG 39041 --- [course-service] [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2025-12-14T23:03:22.792+04:00 DEBUG 39041 --- [course-service] [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 2 @ExceptionHandler, 1 ResponseBodyAdvice
+2025-12-14T23:03:22.955+04:00  INFO 39041 --- [course-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2025-12-14T23:03:22.962+04:00  INFO 39041 --- [course-service] [main] c.w.c.CourseServiceApplication           : Started CourseServiceApplication in 2.621 seconds (process running for 2.898)
+2025-12-14T23:03:33.284+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-14T23:03:33.284+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-12-14T23:03:33.284+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2025-12-14T23:03:33.284+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2025-12-14T23:03:33.284+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2025-12-14T23:03:33.285+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@19c28c97
+2025-12-14T23:03:33.285+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@561494af
+2025-12-14T23:03:33.285+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2025-12-14T23:03:33.285+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-12-14T23:03:33.298+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/register", parameters={}
+2025-12-14T23:03:33.299+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#register(RegisterRequest)
+2025-12-14T23:03:33.332+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [RegisterRequest(name=admin, email=admin@gmail.com, password=admin123)]
+2025-12-14T23:03:33.526+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T23:03:33.526+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [AuthResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjU3MzkwMT (truncated)...]
+2025-12-14T23:03:33.530+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T23:03:36.172+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2025-12-14T23:03:36.172+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#login(LoginRequest)
+2025-12-14T23:03:36.174+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(email=admin@gmail.com, password=admin123)]
+2025-12-14T23:03:36.355+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T23:03:36.356+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [AuthResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjU3MzkwMT (truncated)...]
+2025-12-14T23:03:36.356+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T23:03:46.490+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/courses", parameters={}
+2025-12-14T23:03:46.490+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.CourseController#createCourse(Course)
+2025-12-14T23:03:46.492+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [Course(id=null, title=Introduction to Java Programming, price=99.99)]
+2025-12-14T23:03:46.497+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-4] c.w.c.controller.CourseController        : Received request to create course: Course(id=null, title=Introduction to Java Programming, price=99.99)
+2025-12-14T23:03:46.501+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-4] c.w.courseservice.service.CourseService  : New course created with ID: 1
+2025-12-14T23:03:48.855+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-4] c.w.courseservice.service.EmailService   : HTML Email sent successfully to adilkerimli001@gmail.com with subject: New Course Created Notification (Body snippet: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Created Notific)
+2025-12-14T23:03:49.027+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T23:03:49.027+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing [Course(id=1, title=Introduction to Java Programming, price=99.99)]
+2025-12-14T23:03:49.027+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T23:10:50.590+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/auth/login", parameters={}
+2025-12-14T23:10:50.592+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.AuthController#login(LoginRequest)
+2025-12-14T23:10:50.597+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [LoginRequest(email=admin@gmail.com, password=admin123)]
+2025-12-14T23:10:50.702+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T23:10:50.702+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [AuthResponse(accessToken=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE3NjU3Mzk0NT (truncated)...]
+2025-12-14T23:10:50.703+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T23:11:03.659+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/courses/1", parameters={}
+2025-12-14T23:11:03.660+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.woofly.courseservice.controller.CourseController#getCourseDetails(Long)
+2025-12-14T23:11:03.663+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-8] c.w.c.controller.CourseController        : Received request to get course details for ID: 1
+2025-12-14T23:11:03.670+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-8] c.w.courseservice.service.CourseService  : Fetching course details for course ID: 1
+2025-12-14T23:11:03.746+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-8] o.s.w.c.HttpMessageConverterExtractor    : Reading to [java.util.List<com.woofly.courseservice.dto.StudentDTO>]
+2025-12-14T23:11:03.747+04:00  INFO 39041 --- [course-service] [http-nio-8082-exec-8] c.w.courseservice.service.CourseService  : Found 4 students for course ID: 1
+2025-12-14T23:11:03.756+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/yaml]
+2025-12-14T23:11:03.756+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing [FullCourseResponse(course=Course(id=1, title=Introduction to Java Programming, price=99.99), student (truncated)...]
+2025-12-14T23:11:03.757+04:00 DEBUG 39041 --- [course-service] [http-nio-8082-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2025-12-14T23:36:14.587+04:00  WARN 39041 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m52s579ms).
+2025-12-14T23:43:02.044+04:00  WARN 39041 --- [course-service] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6m47s458ms).
+2025-12-14T23:57:56.269+04:00  INFO 39041 --- [course-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-14T23:57:56.273+04:00  INFO 39041 --- [course-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-12-14T23:57:56.290+04:00  INFO 39041 --- [course-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-14T23:57:56.293+04:00  INFO 39041 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-14T23:57:56.294+04:00  INFO 39041 --- [course-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

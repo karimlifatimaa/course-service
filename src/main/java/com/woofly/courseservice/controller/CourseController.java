@@ -41,6 +41,22 @@ public class CourseController {
         return courseService.getCourseDetails(id);
     }
 
+    @GetMapping("/{id}/basic")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'USER')")
+    public Course getCourseById(@PathVariable Long id) {
+        log.info("Received request to get course with ID: {}", id);
+        return courseService.getCourseById(id);
+    }
+
+
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public Course updateCourse(@PathVariable Long id, @RequestBody Course course) {
+        log.info("Received request to update course with ID: {}", id);
+        return courseService.updateCourse(id, course);
+    }
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
     public void deleteCourse(@PathVariable Long id) {
