@@ -20,7 +20,7 @@ public class RedisCacheConfig {
     @Value("${spring.data.cache.ttl-seconds}")
     private long ttl;
     @Bean
-    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) {
+    public CacheManager cacheManager(RedisConnectionFactory redisConnectionFactory) { //Redis server-ə connection yaradan hazır Spring obyektidir host port
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
                 .entryTtl(Duration.ofSeconds(ttl))
                 .disableCachingNullValues()
